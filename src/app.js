@@ -8,6 +8,7 @@ const { hasSubscribers } = require('diagnostics_channel')
 
 
 const app = express()
+const port = process.env.PORT || 8888
 const publicDirectoryFile = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -77,7 +78,7 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(8888,()=>{
-    console.log("Server is started at 8888")
+app.listen(port,()=>{
+    console.log("Server is started at "+port)
 })
 
