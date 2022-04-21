@@ -11,7 +11,7 @@ request({url:url,json:true},(error,response)=>{
     else {
         callback(undefined,{
             temp:response.body.current.temperature,
-            descr:response.body.current.weather_descriptions[0]
+            descr:response.body.current.weather_descriptions[0] +". It is currently "+ response.body.current.temperature + " degress out. It feels like "+response.body.current.feelslike
 
         })
     }
